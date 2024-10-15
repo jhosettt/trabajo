@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button buttonVerProductos;
     private Button buttonRegistrarCliente;
 
     @Override
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        buttonVerProductos = findViewById(R.id.buttonVerProductos);
         buttonRegistrarCliente = findViewById(R.id.buttonRegistrarCliente);
 
         buttonRegistrarCliente.setOnClickListener(new View.OnClickListener() {
@@ -27,6 +29,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(intent); // Iniciar la nueva actividad
+            }
+        });
+
+
+        buttonVerProductos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, MainActivity3.class);
                 startActivity(intent);
             }
         });
